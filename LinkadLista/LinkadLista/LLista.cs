@@ -10,9 +10,20 @@ namespace LinkadLista
     {
         private Node<T> head;
 
+        public void PrintList()
+        {
+            var currentNode = head;
+            while (currentNode != null)
+            {
+                Console.WriteLine(currentNode.Data);
+                currentNode = currentNode.Next;
+            }
+        }
+
         public void AddFirst(T data)
         {
             Node<T> temp = new Node<T>();
+            temp.Data = data;
             temp.Next = head;
             head = temp;
         }
@@ -21,6 +32,8 @@ namespace LinkadLista
         {
             Node<T> temp = new Node<T>();
             var currentNode = head;
+            temp.Data = data;
+
             if(head == null)
             {
                 head = temp;
@@ -43,7 +56,7 @@ namespace LinkadLista
             head = head.Next;
         }
 
-        public void RemoveLast(T data)
+        public void RemoveLast()
         {
             var currentNode = head;
 
@@ -53,8 +66,9 @@ namespace LinkadLista
             }
             while (currentNode.Next != null)
             {
-                currentNode = null;
+                currentNode = currentNode.Next;
             }
+            currentNode = null;
         }
     }
 }
