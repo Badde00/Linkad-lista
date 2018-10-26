@@ -70,5 +70,33 @@ namespace LinkadLista
             }
             currentNode = null;
         }
+
+        public T GetValue(int index)
+        {
+            var currentNode = head;
+            for (int i = 0; index - 1 > i; i++)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            return currentNode.Data;
+        }
+
+        public void RemoveValue(T data)
+        {
+            var currentNode = head;
+
+            while(true)
+            {
+                if(!currentNode.Next.Data.Equals(data))
+                {
+                    currentNode = currentNode.Next;
+                } else
+                {
+                    currentNode.Next = currentNode.Next.Next;
+                    return;
+                }
+            }
+        }
     }
 }

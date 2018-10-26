@@ -11,15 +11,10 @@ namespace LinkadLista
         static void Main(string[] args)
         {
             LLista<int> test = new LLista<int>();
-            test.AddFirst(7);
-            test.AddFirst(6);
-            test.AddFirst(-12);
-            test.RemoveLast();
-            test.AddLast(999);
-            test.RemoveFirst();
 
-            test.PrintList();
+            test.AddFirst(3);
 
+            Console.Read();
         }
 
 
